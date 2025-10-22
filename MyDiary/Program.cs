@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MyDiary.Data;
+
 namespace MyDiary
 {
     public class Program
@@ -8,6 +11,8 @@ namespace MyDiary
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
