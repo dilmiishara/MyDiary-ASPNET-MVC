@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyDiary.Models;
 
 namespace MyDiary.Data
 {
@@ -8,5 +9,7 @@ namespace MyDiary.Data
         {
             
         }
+
+        public DbSet<DiaryEntry> DiaryEntries { get; set; }
     }
 }
